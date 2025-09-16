@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lemon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="teacher.css">
+</head>
+
+<body>
+      <div class="navbar">
+    <div class="title">
+      <div class="logo"><img src="logo.jpg" alt="logo"></div>
+      <div class="heading">
+        <h1>Nabha Learning App</h1>
+        <p id="welcomeName">Welcome Ujjawal</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="connectivity-status" id="connectivityStatus">🟢 Online</div>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+ <div class="container">
+    <div class="sidebar">
+      <button data-section="dashboard" class="active">🏠 Dashboard</button>
+      <button data-section="subjects">📚 Subjects</button>
+      <button data-section="videos">🎦 Lessons</button>
+      <button data-section="assignments">📝 Assignments</button>
+      <button data-section="student">👥 Students</button>
+    </div>
+
+    <div class="content-area">
+      <!-- Dashboard Section -->
+      <div id="dashboard" class="section active">
+        <h2 class="section-title">Dashboard</h2>
+        <div class="main">
+                <div class="card" id="card1">
+                    <h2>4</h2>
+                    <h4>Total Lessons Given</h4>
+                </div>
+                <div class="card" id="card2">
+                    <h2>2</h2>
+                    <h4> Students Completed</h4>
+                </div>
+                <div class="card" id="card3">
+                    <h2>3</h2>
+                    <h4>Downloaded</h4>
+                </div>
+                <div class="card" id="card4">
+                    <h2>3</h2>
+                    <h4>Assignments Given</h4>
+                </div>
+            </div>
+            <div class="extra">
+                <h3>Recent Activity</h3>
+            <div class="activity">
+                <div class="classes">
+                    <h4>Introduction to Computers</h4>
+                    <div class="details">
+                    <p>15:30 mins</p>
+                    <p>✅Completed</p>
+                    <p>📩Downloaded</p>
+                    </div>
+                </div>
+                <div class="reveiw">
+                    <button> Reveiw </button>
+                </div>
+            </div>
+            <div class="activity">
+                <div class="classes">
+                    <h4>HTML</h4>
+                    <div class="details">
+                    <p>30:00 mins</p>
+                    <p>❎Not Completed</p>
+                    <p>📩Downloaded</p>
+                    </div>
+                </div>
+                <div class="reveiw">
+                    <button> Reveiw </button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Subjects Section -->
+      <div id="subjects" class="section">
+          <h2 class="section-title">Subjects & Study Materials</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">📊 Mathematics</div>
+                        <div class="subject-topics">Algebra, Geometry, Calculus</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('mathematics')">Test Detail</button>
+                    </div>
+                </div>
+                
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">🔬 Science</div>
+                        <div class="subject-topics">Physics, Chemistry, Biology</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('science')">Test Detail</button>
+                    </div>
+                </div>
+                
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">📚 English</div>
+                        <div class="subject-topics">Grammar, Literature, Writing</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('english')">Test Detail</button>
+                    </div>
+                </div>
+                
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">🏛️ History</div>
+                        <div class="subject-topics">Ancient, Medieval, Modern</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('history')">Test Detail</button>
+                    </div>
+                </div>
+                
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">💻 Computer Science</div>
+                        <div class="subject-topics">Programming,Web Development</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('computer')">Test Detail</button>
+                    </div>
+                </div>
+                
+                <div class="subject-card">
+                    <div class="subject-extra">
+                        <div class="subject-name">🌍 Geography</div>
+                        <div class="subject-topics">Physical, Human, Environmental</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF('geography')">Test Detail</button>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+      <!-- Videos Section -->
+      <div id="videos" class="section">
+        <h2 class="section-title">Video Lessons</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">Algebra Fundamentals</div>
+                            <div class="video-subject">• Mathematics</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=NybHckSEQBI')">Watch Now</button>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">Physics Laws Explained</div>
+                            <div class="video-subject">• Science</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=b240PGCMwV0')">Watch Now</button>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">English Grammar Basics</div>
+                            <div class="video-subject">• English</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=P4ramoioWnw')">Watch Now</button>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">World History Overview</div>
+                            <div class="video-subject">• History</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=xuCn8ux2gbs')">Watch Now</button>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">Programming Basics</div>
+                            <div class="video-subject">• Computer Science</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=zOjov-2OZ0E')">Watch Now</button>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <div class="video-extra">
+                            <div class="video-title">Physical Geography</div>
+                            <div class="video-subject">• Geography</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="watchVideo('https://www.youtube.com/watch?v=VGu5pTp9ANk')">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+      <!-- Assignments Section -->
+      <div id="assignments" class="section">
+            <h2 class="section-title">Assignments & Quizzes</h2>
+            <div class="assignments-grid">
+                <div class="assignment-card">
+                        <div class="assignment-info">
+                            <div class="assignment-title">Assignment 1: HTML Basics</div>
+                            <div class="assignment-due">Due: 2025-09-20</div>
+                        </div>
+                        <button class="btn btn-primary" onclick="openTest('html-basics')">Start Assignment</button>
+                </div>
+                <div class="assignment-card">
+                    <div class="assignment-info">
+                        <div class="assignment-title">Assignment 2: CSS Styling</div>
+                        <div class="assignment-due">Due: 2025-09-25</div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openTest('css-styling')">Start Assignment</button>
+                </div>
+                <div class="assignment-card">
+                    <div class="assignment-info">
+                        <div class="assignment-title">Math Quiz: Algebra</div>
+                        <div class="assignment-due">Due: 2025-09-22</div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openTest('algebra-quiz')">Take Quiz</button>
+                </div>
+            </div>
+      </div>
+
+      <!-- Student Section -->
+      <div id="student" class="section">
+        <h2 class="section-title">Subjects & Study Materials</h2>
+            <div class="student-grid">
+                <div class="student-card">
+                    <div class="subject-extra">
+                        <div class="student-name">Aryan Thakur</div>
+                        <div class="student-topics">Class: 10th</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary btn1">About Student</button>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="subject-extra">
+                        <div class="student-name">Ujjawal Kumar Jha</div>
+                        <div class="student-topics">Class: 10th</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary btn2" >About Student</button>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="subject-extra">
+                        <div class="student-name">Sundaram</div>
+                        <div class="student-topics">Class: 10th</div>
+                    </div>
+                    <div class="subject-actions">
+                        <button class="btn btn-primary btn3">About Student</button>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+      <!-- Offline Section -->
+      <div id="offline" class="section">
+        <h2>Offline Content</h2>
+        <p>Downloadable content will appear here.</p>
+      </div>
+      
+    </div>
+ </div>
+
+<script src="teacher.js"></script>
+</body>
+
+</html>
